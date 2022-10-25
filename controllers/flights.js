@@ -20,24 +20,20 @@ function show(req, res) {
 }
 
 function newFlight(req, res) {
-  res.render('flights/new', { title: 'Add Flight' });
+  const newFlight = new Flight();
+// Obtain the default date
+  const dt = newFlight.departs;
+// Format the date for the value attribute of the input
+  let departsDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
+  departsDate += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`;
+  res.render('flights/new', { title: 'Add Flight', departsDate });
 }
 
 function create(req, res) {
-  // Convert nowShowing's checkbox of nothing or "on" to boolean
-//   req.body.nowShowing = !!req.body.nowShowing;
-  // Remove leading/trailing spaces
-  req.body.cast = req.body.cast.trim();
-  // Split if it's not an empty string
-  if (req.body.cast) req.body.cast = req.body.cast.split(/\s*,\s*/);
-  // Delete empty properties on req.body for defaults to happen 
-  for (let key in req.body) {
-    if (req.body[key] === '') delete req.body[key];
-  }
   const flight = new Flight(req.body);
   flight.save(function(err) {
+    console.log(err);
     if (err) return res.redirect('/flights/new');
-    console.log(flight);
     res.redirect('/flights');
   });
 }
