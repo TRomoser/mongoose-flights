@@ -7,6 +7,21 @@ a {
   color: #00B7FF;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 th, td {
   border: 2px solid black;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+img {
+  width: 2vmin;
+  transform: rotate(45deg);
 }

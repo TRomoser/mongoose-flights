@@ -1,5 +1,39 @@
 <%- include('../partials/header') %>
 
-    <p>Welcome to <%= title %></p>
-
+<table id="single-flight">
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Departing</th>
+        <th>Flight Number</th>
+        <th>Departs</th>
+        <th>Destination</th>
+        <th>Arrival Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% flight.id %>
+        <tr>
+          <td><%= flight.airline %></td>
+          <td><%= flight.airport %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs %></td>
+          <td><%= flight.destinations.airport %></td>
+          <td><%= flight.destinations.arrival %></td>
+        </tr>
+        <% %>
+      </tbody>
+    </table>
+<form name="add-destination" action="/flights/<%= flight.id %>/destinations" method="POST">
+    <label>Destination:</label>
+        <select name="destination-airport">
+            <!-- <-% destinations.map(f =>
+            `<option value="${f.airport}">${f.airport}</option>`
+            ).join('') %> -->
+            <option value="SEA">SEA</option>
+        </select>
+    <label>Arrival Time:</label>
+        <input type="datetime-local">
+        <input type="submit" value="Add Flight">
+</form>
 <%- include('../partials/footer') %>
