@@ -7,8 +7,7 @@
         <th>Departing</th>
         <th>Flight Number</th>
         <th>Departs</th>
-        <th>Destination</th>
-        <th>Arrival Time</th>
+        <th>Arrives</th>
       </tr>
     </thead>
     <tbody>
@@ -18,22 +17,32 @@
           <td><%= flight.airport %></td>
           <td><%= flight.flightNo %></td>
           <td><%= flight.departs %></td>
-          <td><%= flight.destinations.airport %></td>
-          <td><%= flight.destinations.arrival %></td>
+          <td><% flight.destinations.forEach(function(d) { %>
+                <%= d.airport %> 
+                at: <%= d.arrival %> <br>
+          <% }); %> 
+        </td>
         </tr>
-        <% %>
       </tbody>
     </table>
+    <br>
+    <form id="addTicket" action="/flights/<%= flight._id %>/tickets" method="POST">
+        <label for="ticketId">Seat</label>
+      <input name="seat" required pattern="[A-F][1-9]\d?"><br>
+      <label for="price">Price</label>
+      <input name="price" type="number"><br>
+      <input type="submit" value="Add Ticket">
+    </form>
+    <br>
 <form name="add-destination" action="/flights/<%= flight.id %>/destinations" method="POST">
     <label>Destination:</label>
-        <select name="destination-airport">
-            <!-- <-% destinations.map(f =>
-            `<option value="${f.airport}">${f.airport}</option>`
-            ).join('') %> -->
-            <option value="SEA">SEA</option>
-        </select>
+        <select name="airport">
+            <% flightEnum.map(function(f) { %>
+            <option value="<%= f %>"> <%= f %></option>
+            <% }); %>
+        </select><br>
     <label>Arrival Time:</label>
-        <input type="datetime-local">
-        <input type="submit" value="Add Flight">
+        <input name="arrival" type="datetime-local"><br>
+        <input type="submit" value="Add Destination">
 </form>
 <%- include('../partials/footer') %>

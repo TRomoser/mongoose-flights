@@ -7,7 +7,7 @@
         <th>Departure Airport</th>
         <th>Flight Number</th>
         <th>Departing</th>
-        <th>Arrival Airport</th>
+        <th>Destination</th>
         <th>Arrival Time</th>
       </tr>
     </thead>
@@ -18,9 +18,12 @@
           <td><%= f.airport %></td>
           <td><%= f.flightNo %></td>
           <td><%= f.departs %></td>
-          <td><%= f.destinations.airport %></td>
-          <td><%= f.destinations.arrival %></td>
-          <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
+          <td><% f.destinations.forEach(function(d) { %>
+              <%= d.airport %> <br>
+              At: <%= d.arrival %> <br>
+              <% }); %> 
+          </td>
+          <td><a href="/flights/<%= f._id %>">Details</a></td>
         </tr>
         <% }); %>
       </tbody>

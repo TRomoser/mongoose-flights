@@ -1,19 +1,45 @@
+* {
+  background-color: bisque;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  color: #051428;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  color: white;
+  background-color: #051428;
 }
 
 th, td {
   border: 2px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  color: white;
+  background-color: #051428;
+}
+
+ul > *{
+  padding: 5px;
+  color: white;
+  background-color: #051428;
+}
+
+label, input, select {
+  border: 2px solid bisque;
+  border-radius: 4px;
+  padding: 5px;
+  color: white;
+  background-color: #051428;
 }
 
 nav {
@@ -21,7 +47,13 @@ nav {
   justify-content: flex-end;
 }
 
+nav > a, nav > img {
+  margin: 4px;
+  text-align: center;
+}
+
 img {
-  width: 2vmin;
+  width: 2.5vmin;
   transform: rotate(45deg);
 }
+
