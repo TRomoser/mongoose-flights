@@ -1,4 +1,5 @@
 const Flight = require('../models/flight');
+const Ticket = require('../models/ticket')
 
 module.exports = {
   index,
@@ -24,7 +25,7 @@ function show(req, res) {
         title: 'Flight Details', 
         flight, 
         flightEnum,
-        ticket 
+        tickets
       });
     });
   });
