@@ -1,10 +1,14 @@
 * {
   background-color: bisque;
+
 }
 
 body {
-  padding: 50px;
+  padding: 5%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://i.imgur.com/uVRZ8nl.png");
+  background-repeat: repeat;
+  background-size: auto;
 }
 
 h1 {
@@ -22,7 +26,7 @@ a {
 
 th, td, label, input, select {
   border: 2px solid bisque;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 5px;
   color: white;
   background-color: #051428;
@@ -30,7 +34,7 @@ th, td, label, input, select {
 
 div {
   border: 2px solid bisque;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 5px;
   color: white;
   background-color: #051428;
@@ -47,15 +51,26 @@ ul > *{
 nav {
   display: flex;
   justify-content: flex-end;
+  background-color: #051428;
+  border: 1px solid #051428;
+  border-radius: 12px;
+  /* background-image: url("https://thumbs.dreamstime.com/b/blue-vector-art-abstract-starry-tile-pattern-beautiful-background-seamless-dark-221723957.jpg"); */
+  /* background-repeat: repeat;  */
 }
 
 nav > a, nav > img {
-  margin: 4px;
+  margin: 2px;
+  padding: 3px;
   text-align: center;
+  background-color: bisque;
+  color: #051428;
 }
 
 img {
   width: 2.5vmin;
   transform: rotate(45deg);
+  background-color: #bisque;
+  border: 2px solid #051428;
+  border-radius: 16px;
 }
 

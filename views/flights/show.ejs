@@ -34,11 +34,11 @@
             <div>Customer:<%= t.customer %></div> 
             <div>Price:$<%= t.price %></div> 
             <div>Seat #:<%= t.seat %></div><br>
+            <br>
+            <hr>
+            <br>
         <% }) %>
     <% } %>
-    <br>
-    <hr>
-    <br>
     <form id="addTicket" action="/flights/<%= flight._id %>/tickets" method="POST">
         <label for="customer">Customer</label> :
         <input name="customer"><br>
