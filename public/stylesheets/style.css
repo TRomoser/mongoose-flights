@@ -60,9 +60,9 @@ nav {
 
 nav > a, nav > img {
   margin: 2px;
-  padding: 3px;
+  /* padding: 3px; */
   text-align: center;
-  background-color: bisque;
+  background-color: rgb(255, 255, 255);
   color: #051428;
 }
 
